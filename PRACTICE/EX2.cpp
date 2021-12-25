@@ -1,11 +1,24 @@
 #include <stdio.h>
-void reverseArray(int arr[],int x){
+void nhapmang(int arr[], int &x)
+{ printf("nhap kich thuong mang :" );
+  scanf("%d",&x);
+  for(int i=0;i<x;i++)
+  { printf("arr[%d] =",i);
+    scanf("%d",&arr[i]);
+  }
+}
+int xuatmang(int arr[],int x)
+ {
+  for(int i=0;i<x;i++)
+     {
+        printf("%d \t",arr[i]);
+     }
+ }
+void reverseArray(int arr[],int &x){
+	 for(int i=x;i>=0;i--){
+		printf("%d \t",arr[i]);
+		}
 	printf("Mang dao nguoc la: ");
-	for(int i=0;i<x;i++){
-		int t=arr[i];
-		arr[i]=arr[x-1-i];
-		arr[x-1-i]=t;
-	}
 	for(int i=0;i<x;i++)
      {
         printf("%d  ",arr[i]);
@@ -13,13 +26,8 @@ void reverseArray(int arr[],int x){
 }
 int main(){
 	int n;
-	printf("Nhap kich thuoc cua mang = ");
-	scanf("%d",&n);
 	int arr[n];
-	printf("Nhap gia tri cua mang:\n");
-    for(int i = 0; i < n; i++){
-        printf("arr[%d]: ",i);
-        scanf("%d",&arr[i]);
-    }
+	nhapmang(arr,n);
+ 	xuatmang(arr,n);
     reverseArray(arr,n);
 }
